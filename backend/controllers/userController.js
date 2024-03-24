@@ -64,10 +64,9 @@ const registerUser = asyncHandler(async (req, res) => {
 
 const updateUser = asyncHandler(async (req, res) => {
   try {
-    const { name, email, password, pic } = req.body;
-    const userId = req.params.id;
+    const { id, name, email, password, pic } = req.body;
 
-    const user = await User.findById(userId);
+    const user = await User.findById(id);
     if (!user) {
       res.status(404).json({ error: "User not found" });
       return;
@@ -88,6 +87,7 @@ const updateUser = asyncHandler(async (req, res) => {
       email: updatedUser.email,
       pic: updatedUser.pic,
       isAdmin: updatedUser.isAdmin,
+      token: generateToken(updateUser._id),
     });
   } catch (error) {
     console.error("Error in updateUser:", error);

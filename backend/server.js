@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 const { connectDB } = require("./config/db");
 const userRoutes = require("./routes/userroutes");
+const noteRoutes = require("./routes/noteroutes");
 const { notFound, erroHandler } = require("./middleware/errorMiddleware");
 
 dotenv.config();
@@ -14,6 +15,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use("/api/users", userRoutes);
+app.use("/api/notes", noteRoutes);
 
 app.get("/", (req, res) => {
   res.send("API is running...");
