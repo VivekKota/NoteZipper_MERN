@@ -1,0 +1,9 @@
+.body-container {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1s ease-in-out;
+}
+
+.expanded .body-container {
+  max-height: 1000px; /* Adjust the value according to your needs */
+}

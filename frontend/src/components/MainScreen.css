@@ -1,0 +1,27 @@
+@import url(https://fonts.google.com/share?selection.family=Work+Sans:ital,wght@0,100..900;1,100..900);
+
+.mainback {
+  min-height: 93vh;
+  display: flex;
+  padding: 10px 0px;
+}
+
+.page {
+  width: 100%;
+}
+
+.heading {
+  font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 60px;
+}
+
+@media only screen and (max-width: 600px) {
+  .heading {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+  }
+}
